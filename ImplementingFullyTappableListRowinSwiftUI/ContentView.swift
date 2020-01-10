@@ -10,7 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, World!")
+        List(0...10, id: \.self) { index in
+            HStack {
+                Text("\(index)")
+                Spacer()
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                print("Tapped: \(index)!")
+            }
+        }
     }
 }
 
